@@ -37,7 +37,7 @@ install() {
   local bin_path="${install_path}/jira"
 
   local download_url
-  download_url="https://github.com/go-jira/jira/releases/download/${version}/jira-${platform}-${arch}"
+  download_url="https://github.com/go-jira/jira/releases/download/v${version}/jira-${platform}-${arch}"
 
   mkdir -p "${install_path}"
 
