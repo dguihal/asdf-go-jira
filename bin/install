@@ -27,7 +27,7 @@ fi
 
 tmp_dir=$(mktemp -d -t jira_XXXX)
 cleanup() {
-  rm -rf ${tmp_dir}
+  rm -rf "${tmp_dir}"
 }
 trap cleanup INT TERM EXIT
 
@@ -37,15 +37,15 @@ install() {
   local bin_path="${install_path}/jira"
 
   local download_url
-  download_url="https://github.com/go-jira/jira/releases/download/${version}/jira-${platform}-${arch}"
+  download_url="https://github.com/go-jira/jira/releases/download/v${version}/jira-${platform}-${arch}"
 
   mkdir -p "${install_path}"
 
-  cd ${tmp_dir}
+  cd "${tmp_dir}"
   echo "Downloading jira from ${download_url}"
   curl -sL "$download_url" -o "${tmp_dir}/jira-${platform}-${version}"
-  mv ${tmp_dir}/jira-${platform}-${version} ${bin_path}
+  mv "${tmp_dir}/jira-${platform}-${version}" "${bin_path}"
   chmod +x "${bin_path}"
 }
 
-install ${ASDF_INSTALL_VERSION} ${ASDF_INSTALL_PATH}
+install "${ASDF_INSTALL_VERSION}" "${ASDF_INSTALL_PATH}"
