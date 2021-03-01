@@ -8,11 +8,16 @@ on:
   pull_request:
     paths-ignore:
       - "**.md"
-      - ".all-contributorsrc"
-  schedule:
-    - cron: "0 0 * * 5"
+      - ".all-contributorsrc
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+      - uses: actions/checkout@v1
+      - name: Run Shellcheck
+        uses: azohra/shell-linter@latest
   plugin_test:
     strategy:
       matrix:
