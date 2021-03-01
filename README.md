@@ -13,7 +13,7 @@ asdf plugin-add go-jira https://github.com/dguihal/asdf-go-jira.git
 
 ## Use
 
-Check out the [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install and manage versions of eksctl.
+Check out the [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install and manage versions of go-jira.
 
 ## Credits
 
